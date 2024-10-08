@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contrôle ESP32</title>
   </head>
-
   <body>
     <h1>ESP32 WebSocket Control</h1>
     <button onclick="sendMessage('LED_ON')">Allumer LED</button>
     <button onclick="sendMessage('LED_OFF')">Éteindre LED</button>
+    
+    <h2>Valeur du potentiomètre : <span id="potentioValue">0</span></h2>
 
     <script>
-      var socket = new WebSocket("ws://10.1.224.111:81"); // Remplace par l'IP de son ESP32 et aussi mettre le PORT
+      var socket = new WebSocket("ws://10.1.224.111:81"); // Remplace par l'IP et le PORT de son ESP32
 
       socket.onopen = function () {
         console.log("Connexion WebSocket ouverte.");
@@ -22,6 +21,12 @@
 
       socket.onmessage = function (event) {
         console.log("Message reçu : " + event.data);
+        
+        // Vérifier si le message contient la valeur du potentiomètre
+        if (event.data.startsWith("Potentiometer:")) {
+          var potentioValue = event.data.split(":")[1];
+          document.getElementById("potentioValue").innerText = potentioValue;  // Mettre à jour la valeur affichée
+        }
       };
 
       socket.onclose = function () {

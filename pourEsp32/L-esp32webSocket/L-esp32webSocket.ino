@@ -1,11 +1,17 @@
 #include <WiFi.h>
 #include <WebSocketsServer.h>
 
+// Variables pour le WiFi
 const char* ssid = "PoleDeVinci_IFT";
 const char* password = "*c.r4UV@VfPn_0";
 
 // Serveur WebSocket sur le port 81
 WebSocketsServer webSocket = WebSocketsServer(81);
+
+// Variables pour le potentiomètre
+int potentioReading = 0;
+unsigned long lastSendTime = 0;
+const unsigned long sendInterval = 200; // Intervalle de 1 seconde pour envoyer les données
 
 void setup() {
   Serial.begin(115200);
@@ -28,6 +34,16 @@ void setup() {
 
 void loop() {
   webSocket.loop();
+
+  // Lire la valeur du potentiomètre
+  potentioReading = analogRead(A0);
+
+  // Envoyer la valeur toutes les secondes
+  if (millis() - lastSendTime > sendInterval) {
+    String message = "Potentiometer:" + String(potentioReading);
+    webSocket.broadcastTXT(message);  // Envoie à tous les clients connectés
+    lastSendTime = millis();
+  }
 }
 
 // Fonction de gestion des événements WebSocket
