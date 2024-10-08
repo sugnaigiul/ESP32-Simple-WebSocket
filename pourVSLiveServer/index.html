@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contrôle ESP32</title>
-  </head>
-  <body>
-    <h1>ESP32 WebSocket Control</h1>
-    <button onclick="sendMessage('LED_ON')">Allumer LED</button>
-    <button onclick="sendMessage('LED_OFF')">Éteindre LED</button>
-    
-    <h2>Valeur du potentiomètre : <span id="potentioValue">0</span></h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Acceuil</title>
+  <script>
+    function changeButtonImage() {
+      // Changer l'image du bouton
+      const button = document.getElementById('buttonImage');
+      button.src = 'medias/boutonV2press.png';
 
-    <script>
-      var socket = new WebSocket("ws://10.1.224.111:81"); // Remplace par l'IP et le PORT de son ESP32
+      // Après 200ms (0.2 seconde), rediriger vers controls.html
+      setTimeout(function() {
+        window.location.href = 'controls.html';
+      }, 200);
+    }
+  </script>
+</head>
+<body>
 
-      socket.onopen = function () {
-        console.log("Connexion WebSocket ouverte.");
-      };
+  <div id="container"><!-- flex container -->
 
-      socket.onmessage = function (event) {
-        console.log("Message reçu : " + event.data);
-        
-        // Vérifier si le message contient la valeur du potentiomètre
-        if (event.data.startsWith("Potentiometer:")) {
-          var potentioValue = event.data.split(":")[1];
-          document.getElementById("potentioValue").innerText = potentioValue;  // Mettre à jour la valeur affichée
-        }
-      };
+    <div class="box" id="btnbox"><!-- flex item -->
+        <h1 style="padding-bottom: 3vh;">Welcome</h1>
+        <img id="buttonImage" src="medias/boutonV2pasPress.png" alt="BTN" 
+        style="width: 30vh; height: auto;" onclick="changeButtonImage()">
+    </div>
 
-      socket.onclose = function () {
-        console.log("Connexion WebSocket fermée.");
-      };
+  </div>
 
-      function sendMessage(message) {
-        socket.send(message);
-      }
-    </script>
-  </body>
+  <a class="absolute-about" href="about.html"><h3> About </h3></a>
+
+</body>
 </html>
