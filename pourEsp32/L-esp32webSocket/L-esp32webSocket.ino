@@ -17,6 +17,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Program start.");
   pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(D1, OUTPUT);
   
   // Connexion au WiFi
   WiFi.begin(ssid, password);
@@ -51,6 +52,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
   if (type == WStype_TEXT) {
     String message = String((char*)payload);
 
+    // Controle de la diode onboard
     if (message == "LED_ON") {
       digitalWrite(LED_BUILTIN, LOW);
       Serial.println("Led ON");
@@ -58,6 +60,17 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
     } else if (message == "LED_OFF") {
       digitalWrite(LED_BUILTIN, HIGH);
       Serial.println("Led OFF");
+      webSocket.sendTXT(num, "LED éteinte");
+    }
+
+    // Controle du relais
+    if (message == "RELAY_ON") {
+      digitalWrite(D1, LOW);
+      Serial.println("Relay ON");
+      webSocket.sendTXT(num, "LED allumée");
+    } else if (message == "RELAY_OFF") {
+      digitalWrite(D1, HIGH);
+      Serial.println("Relay OFF");
       webSocket.sendTXT(num, "LED éteinte");
     }
   }

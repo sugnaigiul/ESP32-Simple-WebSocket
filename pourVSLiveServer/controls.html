@@ -10,11 +10,20 @@
 
     <div id="container"><!-- flex container -->
 
-      <h1>ESP32 WebSocket Control</h1>
-      <button onclick="sendMessage('LED_ON')">Allumer LED</button>
-      <button onclick="sendMessage('LED_OFF')">Éteindre LED</button>
-      
-      <h2>Valeur du potentiomètre : <span id="potentioValue">0</span></h2>
+      <h1 style="padding-bottom: 3vh;">ESP32 WebSocket Control</h1>
+      <span>
+        <span>Controle de la LED onboard :
+        <button onclick="sendMessage('LED_ON')">Allumer LED</button>
+        <button onclick="sendMessage('LED_OFF')">Éteindre LED</button>
+      </span>
+      <br>
+      <span>Valeur du potentiomètre : <span id="potentioValue">0</span><span>
+      <br>
+      <span>
+        <span>Controle du relais :
+        <button onclick="sendMessage('RELAY_ON')">Allumer relais</button>
+        <button onclick="sendMessage('RELAY_OFF')">Éteindre relais</button>
+      </span>
 
     </div>
 
