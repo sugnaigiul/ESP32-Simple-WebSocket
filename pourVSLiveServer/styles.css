@@ -16,8 +16,8 @@ body {
 #container {
     display: flex;           /* establish flex container */
     flex-direction: column;  /* make main axis vertical */
-    justify-content: center; /* center items vertically, in this case */
-    align-items: center;     /* center items horizontally, in this case */
+    justify-content: center; /* center items vertically */
+    align-items: center;     /* center items horizontally */
     height: 100vh;
 }
 
@@ -50,18 +50,18 @@ body {
 
 #potentiometer-container {
     position: relative;
-    width: 200px; /* Ajuste en fonction de la taille de ton image */
-    height: 200px; /* Ajuste en fonction de la taille de ton image */
-  }
+    width: 200px; /* Ajuste taille image */
+    height: 200px; /* Ajuste taille image */
+}
   
-  #potentiometer-bg, #potentiometer-knob {
+#potentiometer-bg, #potentiometer-knob {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%; /* Pour que les images aient la même taille */
     height: 100%;
-  }
+}
   
-  #potentiometer-knob {
-    transform-origin: center; /* Le point autour duquel l'image tournera */
-  }
+#potentiometer-knob {
+    transform-origin: center; /* Point autour duquel l'image tourne */
+}

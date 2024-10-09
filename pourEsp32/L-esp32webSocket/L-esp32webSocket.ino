@@ -10,8 +10,10 @@ WebSocketsServer webSocket = WebSocketsServer(81);
 
 // Variables pour le potentiomètre
 int potentioReading = 0;
+
+// Intervalle pour envoie des données
 unsigned long lastSendTime = 0;
-const unsigned long sendInterval = 100; // Intervalle pour envoie des données
+const unsigned long sendInterval = 100; 
 
 void setup() {
   Serial.begin(115200);
