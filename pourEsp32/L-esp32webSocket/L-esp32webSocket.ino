@@ -1,7 +1,7 @@
 #include <WiFi.h>
 #include <WebSocketsServer.h>
 
-// Variables pour le WiFi
+// Var WiFi
 const char* ssid = "PoleDeVinci_IFT";
 const char* password = "*c.r4UV@VfPn_0";
 
@@ -11,7 +11,7 @@ WebSocketsServer webSocket = WebSocketsServer(81);
 // Variables pour le potentiomètre
 int potentioReading = 0;
 unsigned long lastSendTime = 0;
-const unsigned long sendInterval = 200; // Intervalle de 1 seconde pour envoyer les données
+const unsigned long sendInterval = 100; // Intervalle pour envoie des données
 
 void setup() {
   Serial.begin(115200);
@@ -25,7 +25,8 @@ void setup() {
     delay(1000);
     Serial.println("Connexion au WiFi...");
   }
-  Serial.println("WiFi connecté. Adresse IP : ");
+  Serial.println("WiFi connecté."); 
+  Serial.println("Adresse IP :");
   Serial.println(WiFi.localIP());
   
   // Démarrer le serveur WebSocket

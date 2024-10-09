@@ -22,7 +22,7 @@ body {
 }
 
 .box {
-    width: 300px;
+    width: 600px;
     height: 300px;           /* fixed height to see the box and center the content */
     margin: 5px;
     display: flex;           /* make the box a flex container */
@@ -47,3 +47,21 @@ body {
     color: black;
     text-decoration: none; 
 }
+
+#potentiometer-container {
+    position: relative;
+    width: 200px; /* Ajuste en fonction de la taille de ton image */
+    height: 200px; /* Ajuste en fonction de la taille de ton image */
+  }
+  
+  #potentiometer-bg, #potentiometer-knob {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Pour que les images aient la même taille */
+    height: 100%;
+  }
+  
+  #potentiometer-knob {
+    transform-origin: center; /* Le point autour duquel l'image tournera */
+  }

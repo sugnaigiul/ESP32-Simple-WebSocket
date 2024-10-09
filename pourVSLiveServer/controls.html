@@ -10,20 +10,27 @@
 
     <div id="container"><!-- flex container -->
 
-      <h1 style="padding-bottom: 3vh;">ESP32 WebSocket Control</h1>
-      <span>
-        <span>Controle de la LED onboard :
-        <button onclick="sendMessage('LED_ON')">Allumer LED</button>
-        <button onclick="sendMessage('LED_OFF')">Éteindre LED</button>
-      </span>
-      <br>
-      <span>Valeur du potentiomètre : <span id="potentioValue">0</span><span>
-      <br>
-      <span>
-        <span>Controle du relais :
-        <button onclick="sendMessage('RELAY_ON')">Allumer relais</button>
-        <button onclick="sendMessage('RELAY_OFF')">Éteindre relais</button>
-      </span>
+      <div class="box">
+        <h1 style="padding-bottom: 3vh;">ESP32 WebSocket Control</h1>
+        <span>
+          <span>Controle de la LED onboard :
+          <button onclick="sendMessage('LED_ON')">Allumer LED</button>
+          <button onclick="sendMessage('LED_OFF')">Éteindre LED</button>
+        </span>
+        <br>
+        <span>Valeur du potentiomètre : <span id="potentioValue">0</span><span>
+        <br>
+        <span>
+          <span>Controle du relais :
+          <button onclick="sendMessage('RELAY_ON')">Allumer relais</button>
+          <button onclick="sendMessage('RELAY_OFF')">Éteindre relais</button>
+        </span>
+      </div>
+
+      <div id="potentiometer-container">
+        <img src="./medias/moletteTranspaBack.png" id="potentiometer-bg" alt="Potentiomètre fixe">
+        <img src="./medias/moletteTranspaFront.png" id="potentiometer-knob" alt="Knob du potentiomètre">
+      </div>
 
     </div>
 
@@ -44,6 +51,12 @@
         if (event.data.startsWith("Potentiometer:")) {
           var potentioValue = event.data.split(":")[1];
           document.getElementById("potentioValue").innerText = potentioValue;  // Mettre à jour la valeur affichée
+        
+          // Convertir la valeur du potentiomètre en un angle de rotation (0 à 270 degrés par exemple)
+          var rotationAngle = ((potentioValue / 4095) * 270)-120;  // Si le potentiomètre a une plage de 0 à 4095
+
+          // Appliquer la rotation à l'image du bouton
+          document.getElementById("potentiometer-knob").style.transform = `rotate(${rotationAngle}deg)`;
         }
       };
 
