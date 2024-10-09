@@ -1,4 +1,3 @@
-# cs-2-web-workshop
 <h1>Dépot workshop Websocket ESP32 - Louis G.</h1>
 
 <h2><ins>Sitemap et sketch (papier) :</ins></h2>
