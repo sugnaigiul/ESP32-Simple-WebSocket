@@ -1,9 +1,13 @@
 # cs-2-web-workshop
 Dépot workshop CS2 - Louis G.
 
-Liste des choses à rendre :
+Sitemap et sketch (papier) :
 
--Sitemap (Papier)
--Sketching (Liste des fonctionnalitées par ecrans et croquis rapide de chaque écran) 
--Figma (Palette de couleurs, polices, icons)
--Presentation
+![alt text](<pourVSLiveServer/medias/Sitemap et sketch.jpg>)
+
+Lien figma :
+
+https://www.figma.com/design/VMiOoXRYvlJWXhNaqHpo8F/CS2-Bader?node-id=0-1&t=VhbxrXciKifTlWeQ-1
+
+Informations utile :
+
