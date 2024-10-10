@@ -10,7 +10,7 @@ https://www.figma.com/design/VMiOoXRYvlJWXhNaqHpo8F/CS2-Bader?node-id=0-1&t=Vhbx
 
 Demo vidéo :
 
-[text](pourVSLiveServer/medias/Demo-video.MOV)
+https://github.com/user-attachments/assets/3340649b-81cc-4ea4-b416-fb00d97bd417
 
 
 <h2><ins>Comment faire ?</ins></h2>
