@@ -8,6 +8,9 @@ Lien figma :
 
 https://www.figma.com/design/VMiOoXRYvlJWXhNaqHpo8F/CS2-Bader?node-id=0-1&t=VhbxrXciKifTlWeQ-1
 
+Demo vidéo :
+
+[text](pourVSLiveServer/medias/Demo-video.MOV)
 
 
 <h2><ins>Comment faire ?</ins></h2>
