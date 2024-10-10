@@ -36,5 +36,12 @@ Dans mon cas j'utilise :
 
 7) On peut ensuite lancer notre server local à l'aide de l'extension "Live Server" de VScode. Une page web devrait alors s'ouvrire affichant un bouton rouge. Après avoir cliqué ce dernier on accède à notre panneau de controle. Si tout c'est bien passer on devrait pouvoir controler notre LED et notre relais ainsi que de voir la valeur lu le potentiometre.
 
+<h2><ins>Comment ça marche ?</ins></h2>
 
+Le html sur notre server local et l'ESP communique grâce à un websocket qui constitue un "tunnel" entre les deux. Ils communiquent en s'envoyant des string contenant de l'information. En terme de code l'implementation est vraiment minimal et ne requiert que l'ajout de quelques lignes de code.
 
+<h2><ins>Bonus</ins></h2>
+
+J'ai pour ce projet utilisé deus assets 3D que j'ai modelisé et rendu dans un logiciel de cad, un bouton et un potentiometre.
+
+![alt text](pourVSLiveServer/medias/btn+potCad.png)
