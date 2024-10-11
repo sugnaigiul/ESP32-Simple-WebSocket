@@ -30,6 +30,7 @@ body {
     align-items: center;     /* center content vertically */
     text-align: center;      /* for potential text elements */
     flex-direction: column;
+    max-width: 100%;
 }
 
 .absolute-back {
