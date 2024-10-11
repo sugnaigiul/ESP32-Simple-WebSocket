@@ -59,22 +59,22 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
     if (message == "LED_ON") {
       digitalWrite(LED_BUILTIN, LOW);
       Serial.println("Led ON");
-      webSocket.sendTXT(num, "LED allumée");
+      webSocket.sendTXT(num, "LED allumée"); //Message de feedback optionnel
     } else if (message == "LED_OFF") {
       digitalWrite(LED_BUILTIN, HIGH);
       Serial.println("Led OFF");
-      webSocket.sendTXT(num, "LED éteinte");
+      webSocket.sendTXT(num, "LED éteinte"); //Message de feedback optionnel
     }
 
     // Controle du relais
     if (message == "RELAY_ON") {
       digitalWrite(D1, LOW);
       Serial.println("Relay ON");
-      webSocket.sendTXT(num, "LED allumée");
+      webSocket.sendTXT(num, "Relais allumée"); //Message de feedback optionnel
     } else if (message == "RELAY_OFF") {
       digitalWrite(D1, HIGH);
       Serial.println("Relay OFF");
-      webSocket.sendTXT(num, "LED éteinte");
+      webSocket.sendTXT(num, "Relais éteinte"); //Message de feedback optionnel
     }
   }
 }
