@@ -45,6 +45,6 @@ Le html sur notre server local et l'ESP communique grâce à un websocket qui co
 
 <h2><ins>Bonus</ins></h2>
 
-J'ai pour ce projet utilisé deus assets 3D que j'ai modelisé et rendu dans un logiciel de cad, un bouton et un potentiometre.
+J'ai pour ce projet utilisé deux assets 3D que j'ai modelisé et rendu dans un logiciel de cad, un bouton et un potentiometre.
 
 ![alt text](pourVSLiveServer/medias/btn+potCad.png)
