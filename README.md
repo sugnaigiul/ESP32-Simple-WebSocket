@@ -4,10 +4,6 @@
 
 ![alt text](<pourVSLiveServer/medias/Sitemap et sketch.jpg>)
 
-Lien figma :
-
-https://www.figma.com/design/VMiOoXRYvlJWXhNaqHpo8F/CS2-Bader?node-id=0-1&t=VhbxrXciKifTlWeQ-1
-
 Demo vidéo :
 
 https://github.com/user-attachments/assets/3340649b-81cc-4ea4-b416-fb00d97bd417
